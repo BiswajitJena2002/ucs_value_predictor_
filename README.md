@@ -7,6 +7,7 @@ This project implements a machine learning model to predict the Unconfined Compr
 ## Live Demo
 
 Check out the live demo of the deployed application: [UCS Value Predictor](https://your-app-url-here)
+![Screenshot (446)](https://github.com/BiswajitJena2002/ucs_value_predictor_/assets/121337717/1f84d1e3-165a-4094-b8ce-f8adb7dc47e0)
 
 ## Files
 
