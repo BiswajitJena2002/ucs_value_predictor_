@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCS value Predictor</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        #form-container {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+            border: 1px solid #95a5a6;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <h1>UCS Value</h1>
+    <div id="form-container">
+        <form action="/predict" method="post" id="input-form">
+            <label for="harha">HARHA (%): Harmonic Average Relative Humidity of Air</label>
+            <input type="text" id="harha" name="harha">
+
+            <label for="ll">LL (%): Liquid Limit</label>
+            <input type="text" id="ll" name="ll">
+
+            <label for="pl">PL (%): Plastic Limit</label>
+            <input type="text" id="pl" name="pl">
+
+            <label for="pi">PI (%): Plasticity Index</label>
+            <input type="text" id="pi" name="pi">
+
+            <label for="omc">OMC (%): Optimum Moisture Content</label>
+            <input type="text" id="omc" name="omc">
+
+            <label for="ca">CA –: Calcium Carbonate</label>
+            <input type="text" id="ca" name="ca">
+
+            <label for="mdd">MDD (g/cm³): Maximum Dry Density</label>
+            <input type="text" id="mdd" name="mdd">
+
+            <button type="submit" class="btn btn-success btn-lg mt-2 btn-block" style="background-color: rgb(227, 8, 8);">Predict</button>
+        </form>
+        {% if prediction %}
+        <h1 class="text-center mt-4">UCS value : <br>{{ prediction }}</h1>
+        {% endif %}
+    </div>
+</body>
+</html>
